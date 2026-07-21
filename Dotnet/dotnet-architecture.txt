@@ -1,0 +1,69 @@
+	1. The .NET architecture describes how a C# program is converted into machine code and executed on the operating system.
+	2. Architecture
+		a. 
+	3. C# source code
+		a. Any code we do
+	4. Roslyn Compiler
+		a. It checks
+			• Syntax errors 
+			• Variable declarations 
+			• Type checking 
+			• Method existence 
+			• Access modifiers 
+			• Compilation errors
+		
+		b. Convert source code into Intermediate Language
+	5. Intermediate Language
+		a. Also called MSIL , CIL
+		b. intermediate language between a programming language and machine code.
+				1) 
+				
+		c. 
+		d. With IL
+			i. 
+			
+			ii. This is how IL looks:
+							One. 
+			iii. IL is a stack-based instruction language.
+			iv. It is not readable
+		e. Assembly
+		f. IL is stored inside it
+		g. A deployment unit means the smallest, self-contained piece of software that you can compile, package, and move onto a server or computer to make it run. [1]
+		In .NET, the assembly (a .dll or .exe file) is this unit because it contains everything needed to install and execute that specific part of the application.
+		h. An assembly contains:
+		├── IL Code
+├── Metadata
+├── Manifest
+├── Resources
+		
+		i. IL code - compiled version of C#  (this il code is human-readable but lower-level than C#)
+		j. Meta data - 
+		Metadata is information about the code.
+		It includes details like:
+			• Class names 
+			• Method names 
+			• Return types 
+			• Parameter types 
+			• Properties 
+			• Fields 
+			• Constructors 
+			• Interfaces 
+			• Attributes
+				1) 
+		k. The manifest is like the identity card of the assembly.
+		It stores:
+			• Assembly name 
+			• Version 
+			• Culture 
+			• Referenced assemblies 
+			• Strong name (if signed)
+					® 
+		l. Resources
+		Resources are non-code files packaged with the assembly.
+		Examples:
+			• Images 
+			• Icons 
+			• Sounds 
+			• Strings 
+			• Configuration data
+		m. 

@@ -1,0 +1,483 @@
+	1. 
+	Feature	C#	Java
+	Developed by	Microsoft	Sun Microsystems (now Oracle)
+	Released	2002	1995
+	Runs on	.NET Runtime (CLR)	JVM
+	Language Designer	Anders Hejlsberg	James Gosling
+	Primary Use	Windows apps, Web APIs, Games, Cloud	Enterprise apps, Android (legacy), Web, Banking
+	Source File	.cs	.java
+	Compilation Output	IL (Intermediate Language)	Bytecode
+
+	2. Architecture
+		a. Java
+				1) .
+				
+				
+				
+				2) Components
+					® JDK
+					® JRE
+					® JVM
+					® Garbage Collector
+					® JIT Compiler
+
+		b. C#
+				1) .
+				
+			
+				2) Components
+					® .NET SDK
+					® CLR
+					® CTS
+					® CLS
+					® Garbage Collector
+					® JIT Compiler
+
+	3. Difference
+		a. 
+		Java	C#
+		JVM executes Bytecode	CLR executes IL
+		Produces .class files	Produces DLL/EXE assemblies
+		Uses JRE	Uses .NET Runtime
+		JDK contains compiler	.NET SDK contains compiler
+
+		b. Intermediate Code
+		Java	C#
+		Bytecode	IL (MSIL/CIL)
+		Stored in .class	Stored in DLL/EXE
+		JVM executes	CLR executes
+
+		c. Runtime
+		Java	C#
+		JVM	CLR
+		Platform Independent	Platform Independent (.NET Core+)
+		JIT Compiler	JIT Compiler
+
+	4. Language Syntax
+		a. Console.WriteLine("Hello");
+		
+	5. Properties
+		a. Java
+			i. Uses getters and setters.
+					a) 
+					
+			ii. Object Initialization
+					a) 
+				
+			iii. Delegates
+				1) Don’t have
+				2) Uses Interfaces/Lambda instead
+			iv. Events
+				1) No built-in event keyword
+				2) Uses Listener Interfaces.
+			v. LINQ
+				1) Use Streams
+					a) 
+			vi. Nullable Types
+				1) Primitive types cannot be null, Need wrappers.
+					a) 
+			vii. Value Types
+				1) Everything except primitives is reference type.
+					
+			viii. Struct
+				1) No struct, Everything is class.
+				
+			ix. Indexers
+				1) Not supported
+			x. Operator Overloading
+				1) Not allowed
+				2) Except String '+'.
+				
+			xi. Extension Methods
+				1) Not available
+			xii. Namespaces vs Packages
+				1) package com.company;
+			xiii. . Multiple Inheritance
+				1) Not allowed.
+				2) Uses interfaces.
+				
+			xiv. Interfaces
+				Java
+				Before Java 8
+				Only abstract methods.
+				Now supports
+					• default 
+					• static 
+					• private methods
+				
+			xv. Exception Handling
+				1) try{ }catch(Exception e){ }
+			
+
+		b. C#
+			i. Has inbuilt functions- Automatically creates getter and setter.
+					a) 
+			
+			ii. Object Initialization
+					a) 
+					
+			iii. Delegates
+					 
+					a) 
+							
+					
+			iv. Events
+				1) Have built-in event keyword
+				Used heavily in GUI development.
+					a) 
+			v. LINQ
+				1) More integrated into the language
+					a) 
+			vi. Nullable Types
+				1) Built-in nullable value types.
+					a) 
+			vii. Value Types
+				1) Has
+					• class → Reference Type 
+					• struct → Value Type
+				
+			viii. Struct
+				1) Supports Struct.
+				2) Used for lightweight objects.
+				
+			ix. Indexers
+				1) obj[5]
+				2) Can define custom indexing.
+				
+			x. Operator Overloading
+				1) Supported
+					a) 
+			xi. Extension Methods
+				1) Allows adding methods to existing types without modifying them.
+					a) 
+			xii. Namespaces vs Packages
+				namespace Company
+				{
+				}
+				
+			xiii. Multiple Inheritance
+				1) Not allowed.
+				2) Uses interfaces.
+					
+			xiv. Interfaces
+				• default interface implementations (from C# 8) 
+				• properties 
+				• events 
+				• indexers
+				
+			xv. Exception Handling
+				1) try{ }catch(Exception e){ }
+				2) No throw
+6. Automatic Properties
+Java
+Need to write methods manually.
+C#
+public int Age { get; set; }
+Compiler generates getter/setter.
+
+7. Object Initialization
+Java
+Student s = new Student();
+s.setName("John");
+s.setAge(20);
+C#
+Student s = new Student
+{
+    Name = "John",
+    Age = 20
+};
+Cleaner.
+
+8. Delegates
+Java
+No delegates.
+Uses Interfaces/Lambda instead.
+C#
+Has Delegates.
+delegate void Print();
+Print p = Hello;
+Delegates are type-safe function references.
+
+9. Events
+Java
+No built-in event keyword.
+Uses Listener Interfaces.
+C#
+Built-in.
+public event EventHandler Click;
+Used heavily in GUI development.
+
+10. LINQ
+Java
+Uses Streams.
+numbers.stream()
+       .filter(x -> x>5)
+       .collect(Collectors.toList());
+C#
+Uses LINQ.
+numbers.Where(x=>x>5).ToList();
+LINQ is more integrated into the language.
+
+11. Nullable Types
+Java
+Primitive types cannot be null.
+Need wrappers.
+Integer x = null;
+
+C#
+int? age = null;
+Built-in nullable value types.
+
+12. Value Types
+Java
+Everything except primitives is reference type.
+
+C#
+Has
+	• class → Reference Type
+	• struct → Value Type
+struct Point
+{
+    public int X;
+}
+
+13. Struct
+Java
+No struct.
+Everything is class.
+C#
+Supports Struct.
+Used for lightweight objects.
+
+14. Indexers
+Java
+Not supported.
+
+C#
+obj[5]
+Can define custom indexing.
+
+15. Operator Overloading
+Java
+Not allowed.
+Except String '+'.
+
+C#
+Supported.
+public static Complex operator +(Complex a, Complex b)
+
+16. Extension Methods
+Java
+Not available.
+
+C#
+public static class MyExtensions
+{
+    public static void Print(this string s)
+    {
+        Console.WriteLine(s);
+    }
+}
+Allows adding methods to existing types without modifying them.
+
+17. Namespaces vs Packages
+Java
+package com.company;
+
+C#
+namespace Company
+{
+}
+
+18. Multiple Inheritance
+Java
+Not allowed.
+Uses interfaces.
+
+C#
+Not allowed.
+Uses interfaces.
+Same.
+
+19. Interfaces
+Java
+Before Java 8
+Only abstract methods.
+Now supports
+	• default
+	• static
+	• private methods
+
+C#
+Supports
+	• default interface implementations (from C# 8)
+	• properties
+	• events
+	• indexers
+More flexible.
+
+20. Exception Handling
+Almost identical.
+Java
+try{
+}catch(Exception e){
+}
+C#
+try{
+}catch(Exception ex){
+}
+
+21. Checked Exceptions
+Java
+Supports Checked Exceptions.
+IOException
+Must handle or declare.
+
+C#
+No Checked Exceptions.
+Only runtime exceptions.
+
+22. Memory Management
+Both
+✔ Garbage Collection
+
+Java
+JVM GC
+
+C#
+CLR GC
+
+23. Reflection
+Both support reflection.
+Java
+Class.forName()
+C#
+typeof(Student)
+
+24. Async Programming
+Java
+CompletableFuture
+ExecutorService
+Threads
+
+C#
+async/await
+await GetData();
+Much simpler.
+
+25. Generics
+Java
+Type Erasure.
+Generic type removed at runtime.
+List<Integer>
+becomes
+List
+
+C#
+Reified Generics.
+Generic information remains at runtime.
+Better performance and reflection support.
+
+26. Compilation
+Java
+.java
+↓
+.class
+↓
+JVM
+
+C#
+.cs
+↓
+IL
+↓
+Assembly
+↓
+CLR
+
+27. Ecosystem
+Java
+	• Spring Boot
+	• Hibernate
+	• Maven
+	• Gradle
+
+C#
+	• ASP.NET Core
+	• Entity Framework
+	• NuGet
+	• Visual Studio
+
+28. Cross Platform
+Java
+Excellent.
+Runs anywhere JVM exists.
+
+C#
+Excellent since .NET Core.
+Windows
+Linux
+macOS
+Docker
+Cloud
+
+29. Performance
+Modern Java and .NET are both highly optimized. Performance differences are usually small and depend more on the application and implementation than on the language itself.
+
+30. Where Used
+Java
+	• Banking
+	• Enterprise Software
+	• Large Backend Systems
+	• Android (many existing apps)
+	• Big Data (Hadoop ecosystem)
+
+C#
+	• ASP.NET Core Web APIs
+	• Windows Desktop Applications
+	• Cloud Applications (Azure)
+	• Game Development (Unity)
+	• Enterprise Software
+	• Microservices
+
+31. Learning Curve
+Java	C#
+Simple syntax	Similar syntax
+More boilerplate	Less boilerplate
+Fewer language features	Richer language features
+
+32. Tooling
+Java	C#
+IntelliJ IDEA	Visual Studio
+Eclipse	Visual Studio Code
+Maven	NuGet
+Gradle	MSBuild
+
+33. Quick Feature Comparison
+Feature	Java	C#
+OOP	✅	✅
+Garbage Collection	✅	✅
+Multithreading	✅	✅
+Async/Await	❌ (uses CompletableFuture)	✅
+LINQ	❌	✅
+Delegates	❌	✅
+Events	❌	✅
+Properties	❌	✅
+Structs	❌	✅
+Indexers	❌	✅
+Extension Methods	❌	✅
+Operator Overloading	❌	✅
+Nullable Value Types	❌	✅
+Generics	Type Erasure	Reified
+Checked Exceptions	✅	❌
+Primary Enterprise Framework	Spring Boot	ASP.NET Core
+
+Interview Summary (Easy to Remember)
+	• Both Java and C# are object-oriented, statically typed, compiled to an intermediate language, and use JIT compilation with automatic garbage collection.
+	• Java compiles to Bytecode and runs on the JVM.
+	• C# compiles to IL (MSIL/CIL) and runs on the CLR.
+	• C# offers more language features such as properties, delegates, events, LINQ, extension methods, structs, operator overloading, async/await, nullable value types, and reified generics.
+	• Java emphasizes portability and has a long-established enterprise ecosystem with frameworks like Spring Boot. It also supports checked exceptions and uses type erasure for generics.
+	• .NET/C# is a strong choice for modern web APIs, cloud applications, Windows development, and Unity game development, while Java remains dominant in enterprise backends, financial systems, and many large-scale server applications.
+
+From <https://chatgpt.com/g/g-p-6a5f110ec02881919b6133f291b62d96/c/6a5ef519-7bcc-83e8-8229-f8cc9274ca48> 

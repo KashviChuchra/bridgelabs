@@ -1,0 +1,281 @@
+	1. CLI (Common Language Infrastructure)
+		a. CLI is an international standard (ECMA-335 and ISO) that defines how .NET languages and runtimes should work together.
+		b. CLI is the blueprint (specification).
+		c. CLR is Microsoft's implementation of that blueprint.
+		d. CLI says:
+			• How languages should compile 
+			• What the intermediate language should look like 
+			• How types should behave 
+			• How assemblies should be structured 
+			• What libraries should exist 
+		Microsoft follows this specification to build the CLR.
+		
+	2. CLI Architecture
+		                 CLI (Specification)
+		-------------------------------------------------
+		|                                               |
+		|  CTS (Common Type System)                     |
+		|                                               |
+		|  CLS (Common Language Specification)          |
+		|                                               |
+		|  CIL (Common Intermediate Language)           |
+		|                                               |
+		|  Metadata                                     |
+		|                                               |
+		|  VES (Virtual Execution System)               |
+		|                                               |
+		|  BCL (Base Class Library)                     |
+		-------------------------------------------------
+		
+			
+	3. CTS 
+		a. CTS defines all data types that .NET languages can use.
+		b. Examples:
+				int
+float
+char
+string
+bool
+object
+	c. It also defines:
+				□ Classes 
+				□ Interfaces 
+				□ Structs 
+				□ Enums 
+				□ Delegates 
+				□ Arrays 
+	d. Why is CTS needed?
+		a. So it basically maps
+		int (C#) / Integer (VB.NET) ----> Maps to CTS System.Int32
+		Such that every language could understand it
+		
+		
+	4. CLS (Common Language Specification)
+		a. Not every language supports every feature.
+		b. Example:
+			C# supports:
+				□ Operator overloading 
+				□ Unsigned integers (uint) 
+			Some .NET languages do not.
+		c. So CLS defines:
+		A common subset of features that every CLS-compliant language should support.
+	If you are writing a library for other .NET languages to consume, following CLS guidelines improves compatibility.
+	Example:
+	
+	public uint Age;
+	uint is CTS-compliant but not CLS-compliant, because not all .NET languages support unsigned integers.
+	
+	
+	5. CIL (Common Intermediate Language)
+	6. Metadata
+		a. Compiler also creates Metadata.
+		b. Suppose
+	
+				class Student
+{
+    public int Age;
+}
+				
+				Metadata stores
+					Class
+					Student
+					Field
+					Age
+					Type
+					Int32
+	
+		c. When CLR loads the assembly
+		First thing it does
+		Read Metadata
+		Because it needs to know
+			• What classes exist? 
+			• Which methods exist? 
+			• Which constructors exist? 
+			• Which assemblies are referenced? 
+		Without Metadata, CLR wouldn't know what is inside the assembly.
+	
+			Architecture
+			
+			Compiler
+			↓
+			Metadata Generated
+			↓
+			Stored in Assembly
+			↓
+			CLR Reads Metadata
+	
+	7. BCL (Base Class Library)
+	
+	Console.WriteLine("Hello"); ----> System.Console
+	Math.Sqrt(25) ----> System.Math
+	BCL provides thousands of ready-made classes.
+	
+
+	8.  VES (Virtual Execution System)
+	CLI defines VES.
+	Microsoft implemented it as CLR.
+	This is where execution happens.
+	When CLR starts
+	It performs
+	
+	Load Assembly
+	↓
+	Read Metadata
+	↓
+	Verify IL
+	↓
+	JIT Compile
+	↓
+	Execute Machine Code
+	↓
+	Garbage Collection
+	↓
+	Exceptions
+	↓
+	Security
+	↓
+	Threads
+	Everything runtime-related belongs to VES/CLR.
+	
+	Putting Everything Together
+	Suppose you write
+	
+	using System;
+	class Program
+{
+    static void Main()
+    {
+        int age = 20;
+	Console.WriteLine(age);
+    }
+}
+	Now let's follow every component.
+	
+	Step 1
+	You write source code.
+	
+	Program.cs
+	
+	Step 2
+	Roslyn Compiler starts.
+	Compiler checks
+	
+	Syntax
+	Semantics
+	Errors
+	
+	Step 3
+	Compiler asks CTS
+	
+	What is int?
+	CTS replies
+	
+	System.Int32
+	Compiler asks
+	
+	What is Console?
+	BCL says
+	
+	System.Console
+	
+	Step 4
+	Compiler checks CLS
+	
+	Are CLS rules followed?
+	If building a CLS-compliant library, it can warn about non-compliant public APIs.
+	
+	Step 5
+	Compiler generates
+	
+	IL
+	
+	Step 6
+	Compiler generates
+	
+	Metadata
+	
+	Step 7
+	Everything goes inside
+	
+	Assembly
+	↓
+	Program.exe
+	or
+	Program.dll
+	
+	Step 8
+	CLR starts.
+	CLR reads
+	
+	Metadata
+	to know
+		• Classes 
+		• Methods 
+		• Variables 
+	
+	Step 9
+	CLR verifies IL
+	using CTS rules
+	
+	Is everything type-safe?
+	↓
+	Yes
+	↓
+	Continue
+	
+	Step 10
+	JIT converts
+	
+	IL
+	↓
+	Machine Code
+	
+	Step 11
+	CPU executes machine code.
+	
+	Complete Picture
+	
+	          Write C# Code
+                 │
+                 ▼
+          Roslyn Compiler
+                 │
+     ┌───────────┼────────────┐
+     │           │            │
+     ▼           ▼            ▼
+    CTS        CLS         BCL References
+     │           │            │
+     └───────────┼────────────┘
+                 ▼
+          Generate CIL
+                 │
+          Generate Metadata
+                 │
+                 ▼
+          Assembly (.dll/.exe)
+                 │
+                 ▼
+       CLR (Implementation of VES)
+                 │
+     ┌───────────┼───────────────┐
+     │           │               │
+     ▼           ▼               ▼
+Read Metadata  Verify Types   JIT Compile
+     │           │               │
+     └───────────┼───────────────┘
+                 ▼
+          Machine Code
+                 │
+                 ▼
+                CPU
+	
+	Easy way to remember each component
+	Component	Used By	Purpose
+	CTS	Compiler + CLR	Defines all .NET types and ensures type safety
+	CLS	Compiler	Ensures libraries can be used across .NET languages
+	CIL (IL)	Compiler → CLR	Common intermediate code produced by compilers
+	Metadata	Compiler → CLR	Describes the contents of the assembly (types, methods, references, etc.)
+	BCL	Your code + CLR	Provides reusable classes like Console, String, Math, List<T>
+	VES (implemented as CLR)	Runtime	Loads assemblies, reads metadata, verifies IL, JIT-compiles, manages memory, exceptions, threads, and execution
+	This combined view is the one interviewers often expect because it connects the CLI specification to the actual execution flow of a .NET application.
+	8. 
