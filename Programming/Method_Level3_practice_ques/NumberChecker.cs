@@ -32,11 +32,11 @@ public class NumberChecker
     }
     public bool duckNumber(int[] arr)
     {
-        for(int i = 0; i < arr.Length; i++)
+        for(int i = 1; i < arr.Length; i++)
         {
-            if (arr[i] == 0) return false;
+            if (arr[i] == 0) return true;
         }
-        return true;
+        return false;
     }
 
     public bool Armstrong(int num, int length)
@@ -69,14 +69,39 @@ public class NumberChecker
     {
         int num = Convert.ToInt32(Console.ReadLine());
         int length=count(num);
+        Console.WriteLine($"Length: {length}");
+
         int[] arr=storeInArray(num,length);
+        Console.WriteLine("Number into array: ");
+        for(int i=0;i<length; i++)
+        {
+            Console.Write($"{arr[i]} ");
+        }
+        Console.WriteLine();
+
         bool duck_num = duckNumber(arr);
+        if (duck_num) Console.WriteLine("Yes");
+        else
+        {
+            Console.WriteLine("No");
+        }
+       
+
         bool armstrong_num = Armstrong(num, length);
+        if (armstrong_num) Console.WriteLine("Yes");
+        else
+        {
+            Console.WriteLine("No");
+        }
         int second_largest = Int32.MinValue;
         int largest_num = largest(out second_largest, arr);
+        Console.WriteLine($"LargestNumber:\t{largest_num}\nSecond Largest Number:\t{second_largest}");
+
         int second_smallest = Int32.MaxValue;
         int smallest_num = smallest(out second_smallest, arr);
+        Console.WriteLine($"LargestNumber:\t{smallest_num}\nSecond Largest Number:\t{second_smallest}");
+
 
     }
-    
+
 }
