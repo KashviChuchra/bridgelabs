@@ -1,0 +1,11 @@
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\bin\Debug\net10.0\ProductionCode.deps.json
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\bin\Debug\net10.0\ProductionCode.dll
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\bin\Debug\net10.0\ProductionCode.pdb
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\obj\Debug\net10.0\ProductionCode.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\obj\Debug\net10.0\ProductionCode.AssemblyInfoInputs.cache
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\obj\Debug\net10.0\ProductionCode.AssemblyInfo.cs
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\obj\Debug\net10.0\ProductionCode.csproj.CoreCompileInputs.cache
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\obj\Debug\net10.0\ProductionCode.dll
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\obj\Debug\net10.0\refint\ProductionCode.dll
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\obj\Debug\net10.0\ProductionCode.pdb
+C:\Users\chuch\source\repos\NUNnit_Assesment\ProductionCode\obj\Debug\net10.0\ref\ProductionCode.dll
