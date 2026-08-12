@@ -1,0 +1,14 @@
+C:\Users\chuch\source\repos\LinkedList\LinkedList\obj\Debug\net10.0\LinkedList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chuch\source\repos\LinkedList\LinkedList\obj\Debug\net10.0\LinkedList.AssemblyInfoInputs.cache
+C:\Users\chuch\source\repos\LinkedList\LinkedList\obj\Debug\net10.0\LinkedList.AssemblyInfo.cs
+C:\Users\chuch\source\repos\LinkedList\LinkedList\obj\Debug\net10.0\LinkedList.csproj.CoreCompileInputs.cache
+C:\Users\chuch\source\repos\LinkedList\LinkedList\bin\Debug\net10.0\LinkedList.exe
+C:\Users\chuch\source\repos\LinkedList\LinkedList\bin\Debug\net10.0\LinkedList.deps.json
+C:\Users\chuch\source\repos\LinkedList\LinkedList\bin\Debug\net10.0\LinkedList.runtimeconfig.json
+C:\Users\chuch\source\repos\LinkedList\LinkedList\bin\Debug\net10.0\LinkedList.dll
+C:\Users\chuch\source\repos\LinkedList\LinkedList\bin\Debug\net10.0\LinkedList.pdb
+C:\Users\chuch\source\repos\LinkedList\LinkedList\obj\Debug\net10.0\LinkedList.dll
+C:\Users\chuch\source\repos\LinkedList\LinkedList\obj\Debug\net10.0\refint\LinkedList.dll
+C:\Users\chuch\source\repos\LinkedList\LinkedList\obj\Debug\net10.0\LinkedList.pdb
+C:\Users\chuch\source\repos\LinkedList\LinkedList\obj\Debug\net10.0\LinkedList.genruntimeconfig.cache
+C:\Users\chuch\source\repos\LinkedList\LinkedList\obj\Debug\net10.0\ref\LinkedList.dll
