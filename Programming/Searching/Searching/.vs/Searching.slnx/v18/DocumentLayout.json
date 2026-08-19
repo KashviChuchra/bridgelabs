@@ -1,0 +1,224 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\chuch\\source\\repos\\Searching\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\stringbuilder\\reversestring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\stringbuilder\\reversestring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\challengeproblem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\challengeproblem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\binary search\\rotationpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\binary search\\rotationpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\binary search\\firstandlastoccurence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\binary search\\firstandlastoccurence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\binary search\\peakelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\binary search\\peakelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\stringbuilder\\comparestringbuilderperformance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\stringbuilder\\comparestringbuilderperformance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\stringbuilder\\concatenatestrings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\stringbuilder\\concatenatestrings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\stringbuilder\\removeduplicates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\stringbuilder\\removeduplicates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\binary search\\searchtarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\binary search\\searchtarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\linear search\\seacrchword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\linear search\\seacrchword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|c:\\users\\chuch\\source\\repos\\searching\\searching\\linear search\\firstnegativenumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DE2F15E-4E16-460A-96F1-35030B52AA77}|Searching\\Searching.csproj|solutionrelative:searching\\linear search\\firstnegativenumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChallengeProblem.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\ChallengeProblem.cs",
+              "RelativeDocumentMoniker": "Searching\\ChallengeProblem.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\ChallengeProblem.cs",
+              "RelativeToolTip": "Searching\\ChallengeProblem.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T05:31:13.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CompareStringBuilderPerformance.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\StringBuilder\\CompareStringBuilderPerformance.cs",
+              "RelativeDocumentMoniker": "Searching\\StringBuilder\\CompareStringBuilderPerformance.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\StringBuilder\\CompareStringBuilderPerformance.cs",
+              "RelativeToolTip": "Searching\\StringBuilder\\CompareStringBuilderPerformance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:52:56.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ConcatenateStrings.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\StringBuilder\\ConcatenateStrings.cs",
+              "RelativeDocumentMoniker": "Searching\\StringBuilder\\ConcatenateStrings.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\StringBuilder\\ConcatenateStrings.cs",
+              "RelativeToolTip": "Searching\\StringBuilder\\ConcatenateStrings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:52:38.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RemoveDuplicates.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\StringBuilder\\RemoveDuplicates.cs",
+              "RelativeDocumentMoniker": "Searching\\StringBuilder\\RemoveDuplicates.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\StringBuilder\\RemoveDuplicates.cs",
+              "RelativeToolTip": "Searching\\StringBuilder\\RemoveDuplicates.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:52:19.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReverseString.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\StringBuilder\\ReverseString.cs",
+              "RelativeDocumentMoniker": "Searching\\StringBuilder\\ReverseString.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\StringBuilder\\ReverseString.cs",
+              "RelativeToolTip": "Searching\\StringBuilder\\ReverseString.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:52:04.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FirstAndLastOccurence.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Binary Search\\FirstAndLastOccurence.cs",
+              "RelativeDocumentMoniker": "Searching\\Binary Search\\FirstAndLastOccurence.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Binary Search\\FirstAndLastOccurence.cs",
+              "RelativeToolTip": "Searching\\Binary Search\\FirstAndLastOccurence.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:51:20.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SearchTarget.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Binary Search\\SearchTarget.cs",
+              "RelativeDocumentMoniker": "Searching\\Binary Search\\SearchTarget.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Binary Search\\SearchTarget.cs",
+              "RelativeToolTip": "Searching\\Binary Search\\SearchTarget.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:51:03.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PeakElement.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Binary Search\\PeakElement.cs",
+              "RelativeDocumentMoniker": "Searching\\Binary Search\\PeakElement.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Binary Search\\PeakElement.cs",
+              "RelativeToolTip": "Searching\\Binary Search\\PeakElement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:50:46.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RotationPoint.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Binary Search\\RotationPoint.cs",
+              "RelativeDocumentMoniker": "Searching\\Binary Search\\RotationPoint.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Binary Search\\RotationPoint.cs",
+              "RelativeToolTip": "Searching\\Binary Search\\RotationPoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:49:30.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SeacrchWord.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Linear Search\\SeacrchWord.cs",
+              "RelativeDocumentMoniker": "Searching\\Linear Search\\SeacrchWord.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Linear Search\\SeacrchWord.cs",
+              "RelativeToolTip": "Searching\\Linear Search\\SeacrchWord.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwBUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:40:21.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FirstNegativeNumber.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Linear Search\\FirstNegativeNumber.cs",
+              "RelativeDocumentMoniker": "Searching\\Linear Search\\FirstNegativeNumber.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Linear Search\\FirstNegativeNumber.cs",
+              "RelativeToolTip": "Searching\\Linear Search\\FirstNegativeNumber.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:37:00.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Program.cs",
+              "RelativeDocumentMoniker": "Searching\\Program.cs",
+              "ToolTip": "C:\\Users\\chuch\\source\\repos\\Searching\\Searching\\Program.cs",
+              "RelativeToolTip": "Searching\\Program.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T04:26:30.318Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

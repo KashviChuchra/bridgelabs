@@ -1,0 +1,14 @@
+C:\Users\chuch\source\repos\Searching\Searching\bin\Debug\net10.0\Searching.exe
+C:\Users\chuch\source\repos\Searching\Searching\bin\Debug\net10.0\Searching.deps.json
+C:\Users\chuch\source\repos\Searching\Searching\bin\Debug\net10.0\Searching.runtimeconfig.json
+C:\Users\chuch\source\repos\Searching\Searching\bin\Debug\net10.0\Searching.dll
+C:\Users\chuch\source\repos\Searching\Searching\bin\Debug\net10.0\Searching.pdb
+C:\Users\chuch\source\repos\Searching\Searching\obj\Debug\net10.0\Searching.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chuch\source\repos\Searching\Searching\obj\Debug\net10.0\Searching.AssemblyInfoInputs.cache
+C:\Users\chuch\source\repos\Searching\Searching\obj\Debug\net10.0\Searching.AssemblyInfo.cs
+C:\Users\chuch\source\repos\Searching\Searching\obj\Debug\net10.0\Searching.csproj.CoreCompileInputs.cache
+C:\Users\chuch\source\repos\Searching\Searching\obj\Debug\net10.0\Searching.dll
+C:\Users\chuch\source\repos\Searching\Searching\obj\Debug\net10.0\refint\Searching.dll
+C:\Users\chuch\source\repos\Searching\Searching\obj\Debug\net10.0\Searching.pdb
+C:\Users\chuch\source\repos\Searching\Searching\obj\Debug\net10.0\Searching.genruntimeconfig.cache
+C:\Users\chuch\source\repos\Searching\Searching\obj\Debug\net10.0\ref\Searching.dll
