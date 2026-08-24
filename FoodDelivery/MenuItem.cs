@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace FoodDelivery
+{
+    internal class MenuItem
+    {
+        public int ItemId { get; set; }
+        public string Name { get; set; } = "";
+        public double Price { get; set; }
+        public int Quantity { get; set; }
+
+        public MenuItem(int ItemId, string ItemName, int Quantity, double Price)
+        {
+            this.ItemId = ItemId;
+            this.Name = ItemName;
+            this.Price = Price;
+            this.Quantity = Quantity;
+
+        }
+      
+
+    }
+}
