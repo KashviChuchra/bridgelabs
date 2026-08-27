@@ -694,3 +694,106 @@ The project does not use one data structure for every operation. Instead, each s
 
 The integration of these structures creates a complete food-delivery workflow while also demonstrating their practical advantages, limitations, and time complexities.
 
+Design Pattern
+
+**Start**
+
+↓  
+
+**Customer places an order**
+
+↓  
+
+**Order is added to the Queue**
+
+↓  
+
+**Kitchen processes orders using FIFO**
+
+↓  
+
+**System checks for an available rider**
+
+↓  
+
+**If no rider is available → return “No Rider Available”**
+
+↓  
+
+**If rider is available → assign rider using Circular Linked List**
+
+↓  
+
+**Rider starts delivery**
+
+↓  
+
+**Delivery route is managed using a Doubly Linked List**
+
+↓  
+
+**Rider can move forward or backward through waypoints**
+
+↓  
+
+**If there is a route change → update/reroute the delivery route**
+
+↓  
+
+**Order is delivered**
+
+↓  
+
+**End**
+
+### Cancellation Flow
+
+**Customer cancels order**
+
+↓  
+
+**Order status changes to Cancelled**
+
+↓  
+
+**Cancelled order is pushed onto the Stack**
+
+↓  
+
+**If Undo is requested → Pop the order from Stack**
+
+↓  
+
+**Order status changes back to Pending**
+
+### Lookup Flow
+
+**User provides Order ID / Restaurant ID**
+
+↓  
+
+**Dictionary performs lookup**
+
+↓  
+
+**Order status / Restaurant details are returned**
+
+### Menu Search Flow
+
+**Select Restaurant**
+
+↓  
+
+**Retrieve Menu**
+
+↓  
+
+**Sort menu items by Price**
+
+↓  
+
+**Perform Binary Search**
+
+↓  
+
+**Return matching Menu Item or null**
