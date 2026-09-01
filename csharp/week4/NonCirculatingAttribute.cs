@@ -4,7 +4,12 @@ using System.Text;
 
 namespace LibraryManagementSystem
 {
-    internal class NonCirculatingAttribute
+    [AttributeUsage(AttributeTargets.Class)]
+    internal class NonCirculatingAttribute: Attribute
     {
+        public string Message { get; set; }
+        public NonCirculatingAttribute(string message){
+            Message=message;
+        }
     }
 }

@@ -4,7 +4,9 @@ using System.Text;
 
 namespace LibraryManagementSystem
 {
-    internal class ItemNotCirculatingException
+    internal class ItemNotCirculatingException: Exception
     {
+        public ItemNotCirculatingException() { }
+        public ItemNotCirculatingException(string message) : base(message) { }
     }
 }
