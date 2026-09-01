@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LibraryManagementSystem
 {
-    internal class MediaItem
+    public class MediaItem
     {
         public int ItemId { get; set; }
         public string Title { get; set; }
@@ -20,7 +20,7 @@ namespace LibraryManagementSystem
         
     }
     [NonCirculating("Restricted")]
-    internal class ReferenceMediaItem : MediaItem
+    public class ReferenceMediaItem : MediaItem
     {
         public ReferenceMediaItem(int itemId, string title, string category): base(itemId, title, category)
         {

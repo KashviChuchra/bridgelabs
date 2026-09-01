@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
@@ -12,7 +13,7 @@ using static System.Net.WebRequestMethods;
 namespace LibraryManagementSystem
 {
    
-    internal class CirculationManager
+    public class CirculationManager
     {
         //processes checkouts/returns, evaluates overdue rules, raises alerts, and logs transactions.
 
@@ -21,117 +22,185 @@ namespace LibraryManagementSystem
         // ===============Clouser===============
         public Predicate<Loan> CreateOverdueRule(int loanPeriodDays)
         {
-            return x => loanPeriodDays < (x.DueDate - x.CheckoutDate).TotalDays;
+            return x => x.ReturnedDate == DateTime.MinValue && DateTime.Today > x.CheckoutDate.Date.AddDays(loanPeriodDays);
         }
 
         // =========================Event=====================================
-        public event Action<int> ItemOverdue;
+        public event Action<int, int, int> ItemOverdue;
         public void ProcessOverdue(Loan loan)
         {
-            DateTime today = DateTime.Now;
-            if (loan.DueDate > today)
+            DateTime today = DateTime.Today;
+
+            if (loan.ReturnedDate == DateTime.MinValue && loan.DueDate < today)
             {
-                log(today,loan.PatronId, "No Loan Pending over Due Date");
+                int duedays = (int)(today - loan.DueDate).TotalDays;
+                ItemOverdue?.Invoke(loan.PatronId, duedays, loan.ItemId);
             }
             else
             {
-                ItemOverdue?.Invoke(loan.PatronId);
+                log(today, loan.PatronId, "No Loan Pending over Due Date");
             }
         }
-        public void ItemOverDueNotification(int id)
+        public void ItemOverDueNotification(int patronid, int days, int ItemId)
         {
             DateTime today = DateTime.Now;
-            Console.WriteLine($"{id} is added to Fine Eligible List");
-            fine.Add(id);
-            log(today,id, "Loan overdue: Added into Fine Eligible List");
+            Console.WriteLine($"{ItemId} overdue by {days} days (Patron {patronid})");
+            fine.Add(patronid);
+            log(today, patronid, "Loan overdue: Added into Fine Eligible List");
         }
         public void log(DateTime date,int id,string message) 
         {
             Console.WriteLine($"Date: {date}\t User: {id}\t Issue:{message}");
         }
+        public Action<Loan> CheckoutLogger { get; set; } = loan => 
+            Console.WriteLine($"Checkout: Item {loan.ItemId}, Patron {loan.PatronId}"); 
+        public Action<Loan> ReturnLogger { get; set; } = loan => 
+            Console.WriteLine($"Return: Item {loan.ItemId}, Patron {loan.PatronId}");
 
         //================Lambda Expressions=========================
-        public void FindActiveLoans(Loan loan)
+        public void FindActiveLoans(List<Loan> loans)
         {
-            if (loan.ReturnedDate == DateTime.MinValue)
+            List<Loan> activeLoans=loans.Where(loan => loan.ReturnedDate == DateTime.MinValue).ToList();
+            activeLoans.ForEach(x =>
             {
                 Console.WriteLine("Active Loan");
-                DaysOverduePerLoan(loan);
-            }
-            else
-            {
-                Action<Loan> action = (loan) =>
-                {
-                    Console.WriteLine("Loan is already settled!");
-                };
-            }
+                DaysOverduePerLoan(x);
+            });
+
         }
+
         public void DaysOverduePerLoan(Loan loan)
         {
-            Console.WriteLine("Days Overude: " + DateTime.Compare(DateTime.Today, loan.DueDate));
+            int days = 0;
+
+            if (loan.ReturnedDate == DateTime.MinValue && loan.DueDate < DateTime.Today)
+            {
+                days = (int)(DateTime.Today - loan.DueDate).TotalDays;
+            }
+
+            Console.WriteLine("Days Overude: " + days);
         }
 
         //=====================Linq=========================
         public void GroupLoans(List<Loan> loans, int id)
         {
-            List<Loan> resultLoan = loans.Where(x => x.PatronId == id).ToList();
-            Console.WriteLine($"Loans by {id}");
-            resultLoan.ForEach(x => Console.WriteLine(x.ItemId));
+            var resultLoan = loans.Where(x => x.PatronId == id).GroupBy(x => x.PatronId);
+
+            foreach (var group in resultLoan)
+            {
+                Console.WriteLine($"Loans by {group.Key}");
+                foreach (var loan in group)
+                {
+                    Console.WriteLine(loan.ItemId);
+                }
+            }
         }
         public void CountActiveLoans(List<Loan> loans)
         {
-            List<Loan> resultLoan = loans.Where(x => x.ReturnedDate == DateTime.MinValue).ToList();
-            Console.WriteLine($"Count of Active Loans: {resultLoan.Count}");
+            var resultLoan = loans.Where(x => x.ReturnedDate == DateTime.MinValue).GroupBy(x => x.PatronId)
+                .Select(x => new
+                {
+                    PatronId = x.Key,
+                    Count = x.Count()
+                });
+
+            foreach (var patron in resultLoan)
+            {
+                Console.WriteLine($"Patron {patron.PatronId}: {patron.Count} Active Loans");
+            }
         }
-        // Helper Method
         public int LoanCountByPatron(List<Loan> loans, int id)
         {
-            List<Loan> resultLoan = loans.Where(x => x.PatronId == id).ToList();
-            return resultLoan.Count;
+            return loans.Count(x =>x.PatronId == id && x.ReturnedDate == DateTime.MinValue);
         }
-        public void PatronBorrowingLimit(List<Loan>loans, int limit)
+        public void PatronBorrowingLimit(List<Loan> loans, int limit)
         {
-            List<Loan> patrons = loans.Where(x => LoanCountByPatron(loans,x.PatronId) >limit).ToList();
-            patrons.ForEach(x => Console.WriteLine(x.ItemId));
+            var patrons = loans
+                .Where(x => x.ReturnedDate == DateTime.MinValue)
+                .GroupBy(x => x.PatronId)
+                .Where(x => x.Count() >= limit)
+                .Select(x => x.Key)
+                .ToList();
+
+            patrons.ForEach(x =>Console.WriteLine($"Patron {x} has reached the borrowing limit"));
         }
 
 
-        public bool Reflection()
+        public bool Reflection(MediaItem item)
         {
-            var properties = typeof(MediaItem).GetProperties();
-            foreach (var property in properties)
-            {
-                var requiredAttribute = property.GetCustomAttributes(typeof(RequiredAttribute), true);
-                //if(requiredAttribute== "NonCirculatingAttribute")
-                //{
-                //    throw new ItemNotCirculatingException("This Item can't be circulated");
-
-                //}
-                else
-                {
-                    Console.WriteLine(property.Name);
-                }
-            }
-            return true;
+            Type itemType = item.GetType(); 
+            NonCirculatingAttribute? attribute = itemType.GetCustomAttribute<NonCirculatingAttribute>(); 
+            if (attribute != null) { return true; }
+            return false;
         }
-
+        // logger
+        private CirculationLogger? transactionLogger;
+        public CirculationLogger? TransactionLogger
+        {
+            get => transactionLogger;
+            set => transactionLogger = value;
+        }
         //=====Checkout/Return Item
+        private readonly List<Loan> managedLoans = new List<Loan>();
         public void ReturnItem(Loan loan)
         {
-            DateTime today = DateTime.Now;
-            loan.ReturnedDate=today;
-        }
+            try
+            {
+                if (!managedLoans.Contains(loan) ||loan.ReturnedDate != DateTime.MinValue)
+                {
+                    throw new InvalidOperationException("Item was never checked out or has already been returned.");
+                }
 
-        public void CheckoutItem(List<Loan> loans) {
-            loans.Add(new Loan(1, 102, DateTime.Now, DateTime.Now.AddDays(10)));
+                loan.ReturnedDate = DateTime.Now;
+                ReturnLogger(loan);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+            finally
+            {
+                transactionLogger?.Log($"RETURN ATTEMPT: Item {loan.ItemId}, Patron {loan.PatronId}");
+            }
         }
-       
-        public void AddItems(List<MediaItem> items)
-        {
-            items.Add(new MediaItem(1,"Learn","Maths"));
-        }
+ 
 
+        //incorrect
 
+        //public void CheckoutItem(List<Loan> loans, MediaItem item, int patronId, int loanPeriodDays, int borrowingLimit)
+        //{
+        //    var attribute = item.GetType().GetCustomAttributes(typeof(NonCirculatingAttribute), true).FirstOrDefault() as NonCirculatingAttribute;
+
+        //    if (attribute != null)
+        //    {
+        //        throw new ItemNotCirculatingException(item.ItemId, attribute.Message);
+        //    }
+        //    if (loans.Any(x =>x.ItemId == item.ItemId && x.ReturnedDate == DateTime.MinValue))
+        //    {
+        //        throw new InvalidOperationException("Item is already checked out");
+        //    }
+        //    if (loans.Count(x =>x.PatronId == patronId && x.ReturnedDate == DateTime.MinValue) >= borrowingLimit)
+        //    {
+        //        throw new InvalidOperationException("Patron has reached the borrowing limit.");
+        //    }
+
+        //    DateTime checkoutDate = DateTime.Now;
+        //    DateTime dueDate = checkoutDate.AddDays(loanPeriodDays);
+
+        //    loans.Add(new Loan(item.ItemId,patronId,checkoutDate,dueDate));
+        //}
+
+        //public void AddItems(List<MediaItem> items)
+        //{
+        //    items.Add(new MediaItem(1,"Learn","Maths"));
+        //}
+
+        //public void ProcessAllOverdue(List<Loan> loans) 
+        //{ 
+        //    foreach (Loan loan in loans) { ProcessOverdue(loan); 
+        //    } 
+        //}
 
     }
 }

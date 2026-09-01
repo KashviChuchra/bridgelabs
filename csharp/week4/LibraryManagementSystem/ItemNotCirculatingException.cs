@@ -4,9 +4,10 @@ using System.Text;
 
 namespace LibraryManagementSystem
 {
-    internal class ItemNotCirculatingException: Exception
+    public class ItemNotCirculatingException: Exception
     {
-        public ItemNotCirculatingException() { }
-        public ItemNotCirculatingException(string message) : base(message) { }
+        public int ItemId { get; }
+        public ItemNotCirculatingException(int itemid) { ItemId = itemid; }
+        public ItemNotCirculatingException(int itemid, string message) : base(message) { ItemId = itemid; }
     }
 }

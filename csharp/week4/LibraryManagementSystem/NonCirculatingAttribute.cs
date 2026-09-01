@@ -4,8 +4,8 @@ using System.Text;
 
 namespace LibraryManagementSystem
 {
-    [AttributeUsage(AttributeTargets.Class)]
-    internal class NonCirculatingAttribute: Attribute
+    [AttributeUsage(AttributeTargets.Class,Inherited =true)]
+    public class NonCirculatingAttribute: Attribute
     {
         public string Message { get; set; }
         public NonCirculatingAttribute(string message){

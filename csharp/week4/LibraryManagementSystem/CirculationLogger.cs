@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LibraryManagementSystem
 {
-    internal class CirculationLogger : IDisposable
+    public class CirculationLogger : IDisposable
     {
         private StreamWriter? writer;
         private bool disposed;

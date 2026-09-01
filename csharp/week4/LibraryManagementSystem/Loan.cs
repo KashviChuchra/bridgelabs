@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LibraryManagementSystem
 {
-    internal class Loan
+    public class Loan
     {
         public int ItemId { get; set; } 
         public int PatronId { get; set; } 
