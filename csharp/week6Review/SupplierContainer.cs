@@ -6,6 +6,6 @@ namespace InventoryRestockAndPurchaseOrderPlanner
 {
     internal class SupplierContainer
     {
-        public List<Supplier> Suppliers = new();
+        public List<Supplier> Suppliers {get; set;} = new();
     }
 }
