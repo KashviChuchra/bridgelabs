@@ -31,7 +31,6 @@ namespace InventoryRestockAndPurchaseOrderPlanner
                 return new ProcessingResult(purchaseOrders, lowStockItems, new List<SupplierSummary>(), errors,0, 0);
             }
             string? line;
-            reader.ReadLine();
             while ((line = reader.ReadLine()) != null)
             {
                 if (string.IsNullOrWhiteSpace(line))
@@ -45,14 +44,14 @@ namespace InventoryRestockAndPurchaseOrderPlanner
                     Inventory item = ParseInventoryItem(line);
                     ValidateSku(item.Sku);
 
-                    if (!skuSet.Add(item.Sku)) new DuplicateSkuException("Duplia=cate sku");
+                    if (!skuSet.Add(item.Sku))    throw new DuplicateSkuException($"Duplia=cate sku: {item.Sku}");
                     ValidateQuantity(item.QntOnHand);
                     ValidateThreshold(item.ReorderThreshold);
 
                     if (item.QntOnHand<item.ReorderThreshold)
                     {
 
-                        if (suppliers.TryGetValue(item.PreferredSupplierId, out Supplier? supplier)) throw new SupplierNotFoundException($"Supplier id: {item.PreferredSupplierId} not found");
+                        if (!suppliers.TryGetValue(item.PreferredSupplierId, out Supplier? supplier)) throw new SupplierNotFoundException($"Supplier id: {item.PreferredSupplierId} not found");
                         int reorderQuantity = CalculateReorderQuantity(item.QntOnHand, item.ReorderThreshold);
 
 
@@ -132,7 +131,7 @@ namespace InventoryRestockAndPurchaseOrderPlanner
             }
         }
 
-        public Dictionary<string, Supplier> LoadSuppliers(string suppliersPath)
+        private Dictionary<string, Supplier> LoadSuppliers(string suppliersPath)
         {
             using FileStream fileStream = new FileStream(suppliersPath, FileMode.Open, FileAccess.Read, FileShare.None);
             SupplierContainer? container =JsonSerializer.Deserialize<SupplierContainer>(fileStream);
@@ -151,7 +150,7 @@ namespace InventoryRestockAndPurchaseOrderPlanner
             return suppliers;
         }
 
-        public List<SupplierSummary> BuildSupplierSummary(List<PurchaseOrder> orders) 
+        private List<SupplierSummary> BuildSupplierSummary(List<PurchaseOrder> orders) 
         {
      
             Dictionary<string, SupplierSummary> summary =new Dictionary<string, SupplierSummary>(StringComparer.OrdinalIgnoreCase);

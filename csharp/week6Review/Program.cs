@@ -7,13 +7,15 @@ class Program
     {
 
         string inventoryPath = @"C:\Users\chuch\OneDrive\Desktop\file\inventory.csv";
-        string suppliersPath = @"C:\Users\chuch\OneDrive\Desktop\file\suppliers.csv";
+        string suppliersPath = @"C:\Users\chuch\OneDrive\Desktop\file\suppliers.json";
 
 
         try
         {
-            File.Exists(inventoryPath);
-            File.Exists(suppliersPath);
+           if (!File.Exists(inventoryPath) || !File.Exists(suppliersPath)){
+                Console.WriteLine("Required files are missing.");
+                return;
+            }
             Console.WriteLine("File Exists!");
 
             InventoryProcessor1 processor = new InventoryProcessor1();
