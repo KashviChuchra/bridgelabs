@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="InventoryRestockAndPurchaseOrderPlanner/InventoryRestockAndPurchaseOrderPlanner.csproj" />
+  <Project Path="TestProject1/TestProject1.csproj" Id="cd98e1c6-b570-49e5-a56d-76cbf6a90ed1" />
+</Solution>

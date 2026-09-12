@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LibraryManagementSystem/LibraryManagementSystem.csproj" />
+  <Project Path="TestProject1/TestProject1.csproj" Id="8706abf7-9035-47e8-83f3-f6b309e1e2b1" />
+</Solution>
