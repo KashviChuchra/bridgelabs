@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AlgorithimRunTimeAnalysis
+namespace IO_Programming
 {
-    internal class SortingAlgorithm
+    internal class AssignmentSolution
     {
     }
 }

@@ -3,16 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>IO_Programming</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="BufferedStream.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="BufferedStream.cs" />
-  </ItemGroup>
 
 </Project>
