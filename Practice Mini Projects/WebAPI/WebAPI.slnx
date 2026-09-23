@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BusinessLayer/BusinessLayer.csproj" />
+  <Project Path="ModelLayer/ModelLayer.csproj" />
+  <Project Path="Repository/Repository.csproj" />
+  <Project Path="WebAPI/WebAPI.csproj" />
+</Solution>

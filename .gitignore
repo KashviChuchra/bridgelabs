@@ -1,0 +1,14 @@
+bin/
+obj/
+.vs/
+
+
+appsettings.Development.json
+
+
+packages/
+
+appsettings.json
+WebAPI.csproj
+WebAPI.csproj.user
+WebAPI.http
