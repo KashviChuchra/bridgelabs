@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/API-Gateway/">
+    <Project Path="ApiGateway/ApiGateway.csproj" />
+  </Folder>
+  <Folder Name="/ProductService/">
+    <Project Path="ModelLayer/ProductModelLayer.csproj" />
+    <Project Path="ProductService/ProductService.csproj" />
+  </Folder>
+  <Folder Name="/UserService/">
+    <Project Path="UserModelLayer/UserModelLayer.csproj" />
+    <Project Path="UserService/UserService.csproj" />
+  </Folder>
+</Solution>
